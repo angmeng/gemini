@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
         end
     end
     
-    def authenticate_user
+    def authenticate_mother
         if session[:father_id].present?
             session[:father_id]
         else

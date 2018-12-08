@@ -61,8 +61,6 @@
     <%= form.select :classroom_id, Classroom.order(:name).map { |classroom| [classroom.name, classroom.id] }, include_blank: "Select the branch: " %>
   </div>
 
-
-
   <div class="actions">
     <%= form.submit %>
   </div>
