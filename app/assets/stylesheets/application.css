@@ -15,7 +15,6 @@
  */
 
 .sidenav {
-    height: 100%;
     width: 160px;
     position: fixed;
     z-index: 1;
@@ -23,6 +22,7 @@
     left: 0;
     background-color: #111;
     overflow-x: hidden;
+    margin-top: 40px;
 }
 
 .sidenav a {
