@@ -1,0 +1,69 @@
+<h1>Class Details</h1>
+<h4>Sidebar</h4>
+<table>
+    <tr>
+        <th>Classroom name</th>
+    </tr>
+    
+    <tr>
+        <td>  <%= link_to "All",  class_details_path %> </td>
+    </tr>
+    
+     <% @classrooms.each do |classroom| %>
+    <tr>
+        <td> <%= link_to classroom.name, "/class_details?classroom_id=#{classroom.id}" %> </td>
+    </tr>
+    <% end %>
+</table>
+
+<h3>Update Student Details</h3>
+
+<%= form_tag  update_student_class_details_path do %>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Grade</th>
+        <th>IC</th>
+        <th>Nationality</th>
+    </tr>
+    
+   <% @students.each do |student|  %>
+   <tr>
+      <td><%= text_field_tag "student[#{student.id }][name]", student.name  %></td>
+      <td><%= text_field_tag "student[#{student.id }][classroom.name]", student.classroom.name  %></td>
+      <td><%= text_field_tag "student[#{student.id }][ic]", student.ic  %></td>
+      <td><%= text_field_tag "student[#{student.id }][nationality]", student.nationality  %></td>
+  </tr>
+  <% end %>
+  
+  <tr>
+      <td colspan='3'></td>
+      <td><%= submit_tag "Update students"  %></td>
+  </tr>
+  
+</table>
+<% end %>
+
+<h3>Student details/updated</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Grade</th>
+        <th>IC</th>
+        <th>Nationality</th>
+    </tr>
+    <% @students.each do |student|  %>
+    <tr>
+        <td><%= student.name %></td>
+        <td><%= student.classroom.name %></td>
+        <td><%= student.ic %></td>
+        <td><%= student.nationality %></td>
+        
+    </tr>
+    <% end %>
+ 
+</table>
+
+
+
+
