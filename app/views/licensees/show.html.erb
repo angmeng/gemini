@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @licensee.name %>
+</p>
+
+<p>
+  <strong>Ic:</strong>
+  <%= @licensee.ic %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @licensee.gender %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @licensee.nationality %>
+</p>
+
+<p>
+  <strong>Experiences:</strong>
+  <%= @licensee.experiences %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @licensee.contact %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @licensee.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @licensee.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @licensee.password %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @licensee.branch.name %>
+</p>
+
+<%= link_to 'Edit', edit_licensee_path(@licensee) %> |
+<%= link_to 'Back', licensees_path %>
