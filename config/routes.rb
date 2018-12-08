@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sign_up', to: "sign_up#new"
   post 'sign_up', to: "sign_up#create"
   
@@ -18,5 +19,14 @@ Rails.application.routes.draw do
   post 'teacher/login', to: "login#create_teacher_session"
   delete 'teacher/logout', to: "login#destroy_teacher_session"
   
+  resources :announcements
+  resources :admins
+  resources :mothers
+  resources :fathers
+  resources :licensees
+  resources :students
+  resources :teachers
+  resources :classrooms
+  resources :branches
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

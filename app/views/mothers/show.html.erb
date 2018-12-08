@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mother.name %>
+</p>
+
+<p>
+  <strong>Ic:</strong>
+  <%= @mother.ic %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @mother.gender %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @mother.nationality %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @mother.contact %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @mother.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @mother.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @mother.password %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @mother.branch.name %>
+</p>
+
+<%= link_to 'Edit', edit_mother_path(@mother) %> |
+<%= link_to 'Back', mothers_path %>

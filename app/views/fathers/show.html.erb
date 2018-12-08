@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @father.name %>
+</p>
+
+<p>
+  <strong>Ic:</strong>
+  <%= @father.ic %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @father.gender %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @father.nationality %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @father.contact %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @father.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @father.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @father.password %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @father.branch.name %>
+</p>
+
+<%= link_to 'Edit', edit_father_path(@father) %> |
+<%= link_to 'Back', fathers_path %>
