@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  
+  resources :class_details, only: [:index] do
+    collection do
+     
+      post 'update_student'
+    end
+  end
+
   resources :announcements
   resources :admins
   resources :mothers
