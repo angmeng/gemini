@@ -8,7 +8,7 @@ class LoginController < ApplicationController
     if father.present?
       flash[:notice] = "Parent You are signed in successfully"
       session[:father_id] = father.id
-      redirect_to #to do
+      redirect_to homepages_index_path
     else
       flash[:alert] = "Email or password is incorrect"
       redirect_to action: :new
@@ -21,6 +21,7 @@ class LoginController < ApplicationController
     redirect_to action: :new
   end
   
+  #Admin
   def admin_login
   end
   
@@ -30,7 +31,7 @@ class LoginController < ApplicationController
     if admin.present?
       flash[:notice] = "Admin You are signed in successfully"
       session[:admin_id] = admin.id
-      redirect_to #to do
+      redirect_to admins_path
     else
       flash[:alert] = "Email or password is incorrect"
       redirect_to action: :admin_login
@@ -43,6 +44,7 @@ class LoginController < ApplicationController
     redirect_to action: :admin_login
   end
   
+  #Licensee
   def licensee_login
   end
   
@@ -52,7 +54,7 @@ class LoginController < ApplicationController
     if licensee.present?
       flash[:notice] = "Licensee You are signed in successfully"
       session[:licensee_id] = licensee.id
-      redirect_to #
+      redirect_to homepages_index_path
     else
       flash[:alert] = "Email or password is incorrect"
       redirect_to action: :licensee_login
@@ -65,6 +67,7 @@ class LoginController < ApplicationController
     redirect_to action: :licensee_login
   end
   
+  #Teacher
   def teacher_login
   end
   
@@ -74,7 +77,7 @@ class LoginController < ApplicationController
     if teacher.present?
       flash[:notice] = "Teacher You are signed in successfully"
       session[:teacher_id] = teacher.id
-      redirect_to #
+      redirect_to homepages_index_path
     else
       flash[:alert] = "Email or password is incorrect"
       redirect_to action: :teacher_login

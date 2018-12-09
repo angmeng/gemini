@@ -20,7 +20,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <a class="navbar-brand" href="#">Kindergarten</a>
+        <a class="navbar-brand" href="/homepages/index" >Kindergarten</a>
         
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -48,7 +48,11 @@
           </li>
           
           <li class="nav-item active">
-            <!--<a class="nav-link" href="#">Parents Detail</a>-->
+            <%= link_to "Student's Father", fathers_path %>
+          </li>
+          
+          <li class="nav-item active">
+            <%= link_to "Student's Mother", mothers_path %>
           </li>
         
           <li class="nav-item active">
