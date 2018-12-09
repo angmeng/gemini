@@ -1,4 +1,5 @@
 class FathersController < ApplicationController
+  layout 'admin'
   before_action :set_father, only: [:show, :edit, :update, :destroy]
 
   # GET /fathers

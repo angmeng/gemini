@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'homepages/index'
+  
+  resources :admin_details, only: [:index] do
+    collection do
+      post 'update_admin'
+    end
+  end
+
   resources :class_details, only: [:index] do
     collection do
      

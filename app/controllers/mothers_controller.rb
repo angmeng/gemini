@@ -1,4 +1,5 @@
 class MothersController < ApplicationController
+  layout 'admin'
   before_action :set_mother, only: [:show, :edit, :update, :destroy]
 
   # GET /mothers

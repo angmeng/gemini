@@ -13,12 +13,22 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form_input"  %>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: "form_text_input"  %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :admin_id %>
+    <%= form.select :admin_id, Admin.order(:name).map { |admin| [admin.name, admin.id] }, include_blank: "Please select: " %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :licensee_id %>
+    <%= form.select :licensee_id, Licensee.order(:name).map { |licensee| [licensee.name, licensee.id] }, include_blank: "Select the licensee: " %>
   </div>
 
   <div class="actions">

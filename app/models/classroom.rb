@@ -16,5 +16,5 @@ class Classroom < ApplicationRecord
     has_many :students
     
     validates :name, presence: true
-    validates :branch, presence: true, uniqueness: true
+    validates :branch, presence: true
 end

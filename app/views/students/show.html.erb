@@ -42,7 +42,7 @@
 
 <p>
   <strong>Classroom:</strong>
-  <%= @student.classroom_id %>
+  <%= @student.classroom.name %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

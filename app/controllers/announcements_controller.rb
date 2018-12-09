@@ -1,4 +1,5 @@
 class AnnouncementsController < ApplicationController
+  layout 'admin'
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
 
   # GET /announcements
@@ -69,6 +70,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:title, :content)
+      params.require(:announcement).permit(:title, :content, :admin_id, :licensee_id)
     end
 end

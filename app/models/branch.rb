@@ -14,6 +14,5 @@ class Branch < ApplicationRecord
     has_many :classrooms
     has_one :licensee
     
-    validates :name, presence: true, uniqueness: true
-    validates :licensee, presence: true, uniqueness: true
+    validates :name, presence: true
 end

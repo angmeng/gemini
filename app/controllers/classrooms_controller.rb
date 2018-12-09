@@ -1,4 +1,5 @@
 class ClassroomsController < ApplicationController
+  layout 'admin'
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
 
   # GET /classrooms
