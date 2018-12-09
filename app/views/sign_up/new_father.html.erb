@@ -1,10 +1,11 @@
-<%= form_with(model: sign_up_path, model: @licensee, local: true) do |form| %>
-  <% if @licensee.errors.any? %>
+<h1>Sign up</h1>
+<%= form_with(model: sign_up_path, model: @father, local: true) do |form| %>
+  <% if @father.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@licensee.errors.count, "error") %> prohibited this licensee from being saved:</h2>
+      <h2><%= pluralize(@father.errors.count, "error") %> prohibited this father from being saved:</h2>
 
       <ul>
-      <% @licensee.errors.full_messages.each do |message| %>
+      <% @father.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -35,3 +36,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<div><%= link_to "Sign up for licensee!",  licensee_sign_up_path  %></div>
+<div><%= link_to "Sign up for teacher!",   teacher_sign_up_path  %></div>

@@ -1,10 +1,11 @@
-<%= form_with(model: sign_up_path, model: @licensee, local: true) do |form| %>
-  <% if @licensee.errors.any? %>
+<h1>Teacher Sign up</h1>
+<%= form_with(model: teacher_sign_up_path, model: @teacher, local: true) do |form| %>
+  <% if @teacher.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@licensee.errors.count, "error") %> prohibited this licensee from being saved:</h2>
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
 
       <ul>
-      <% @licensee.errors.full_messages.each do |message| %>
+      <% @teacher.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -25,10 +26,10 @@
     <%= form.label :password %>
     <%= form.text_field :password %>
   </div>
-
+  
   <div class="field">
-    <%= form.label :branch_id %>
-    <%= form.select :branch_id, Branch.order(:name).map { |branch| [branch.name, branch.id] }, include_blank: "Select the branch: " %>
+    <%= form.label :classroom_id %>
+    <%= form.select :classroom_id, Classroom.order(:name).map { |classroom| [classroom.name, classroom.id] }, include_blank: "Select the branch: " %>
   </div>
 
   <div class="actions">

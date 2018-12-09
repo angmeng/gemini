@@ -1,4 +1,5 @@
-<%= form_with(model: sign_up_path, model: @licensee, local: true) do |form| %>
+<h1>Licensee Sign up</h1>
+<%= form_with(model: licensee_sign_up_path, model: @licensee, local: true) do |form| %>
   <% if @licensee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@licensee.errors.count, "error") %> prohibited this licensee from being saved:</h2>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   
   resources :class_details, only: [:index] do
     collection do
@@ -8,14 +7,18 @@ Rails.application.routes.draw do
     end
   end
 
-=======
-
-  get 'sign_up', to: "sign_up#new"
-  post 'sign_up', to: "sign_up#create"
+  get 'sign_up', to: "sign_up#new_father"
+  post 'sign_up', to: "sign_up#create_father"
   
-  get 'login', to: "login#new"
-  post 'login', to: "login#create"
-  delete 'logout', to: "login#destroy"
+  get 'teacher/sign_up', to: "sign_up#new_teacher"
+  post 'teacher/sign_up', to: "sign_up#create_teacher"
+  
+  get 'licensee/sign_up', to: "sign_up#new_licensee"
+  post 'licensee/sign_up', to: "sign_up#create_licensee"
+  
+  get 'login', to: "login#father_login"
+  post 'login', to: "login#create_father_session"
+  delete 'logout', to: "login#destroy_father_session"
   
   get 'admin/login', to: "login#admin_login"
   post 'admin/login', to: "login#create_admin_session"
@@ -29,7 +32,6 @@ Rails.application.routes.draw do
   post 'teacher/login', to: "login#create_teacher_session"
   delete 'teacher/logout', to: "login#destroy_teacher_session"
   
->>>>>>> cda9991ab28013076aad42f39028d173934d153c
   resources :announcements
   resources :admins
   resources :mothers
