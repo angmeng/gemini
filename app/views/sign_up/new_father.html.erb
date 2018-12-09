@@ -26,7 +26,7 @@
     <%= form.label :password %>
     <%= form.text_field :password %>
   </div>
-
+  
   <div class="field">
     <%= form.label :branch_id %>
     <%= form.select :branch_id, Branch.order(:name).map { |branch| [branch.name, branch.id] }, include_blank: "Select the branch: " %>

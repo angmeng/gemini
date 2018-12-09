@@ -8,6 +8,7 @@ class SignUpController < ApplicationController
 
     respond_to do |format|
       if @father.save
+        FatherMailer.welcome_email(@father.id).deliver_now
         format.html { redirect_to login_path, notice: 'Father was successfully created.' }
         format.json { render login_path, status: :created, location: @father }
       else
@@ -26,6 +27,7 @@ class SignUpController < ApplicationController
 
     respond_to do |format|
       if @teacher.save
+        TeacherMailer.welcome_email(@teacher.id).deliver_now
         format.html { redirect_to teacher_login_path, notice: 'Teacher was successfully created.' }
         format.json { render teacher_login_path, status: :created, location: @teacher }
       else
@@ -44,6 +46,7 @@ class SignUpController < ApplicationController
 
     respond_to do |format|
       if @licensee.save
+        LicenseeMailer.welcome_email(@licensee.id).deliver_now
         format.html { redirect_to licensee_login_path, notice: 'Licensee was successfully created.' }
         format.json { render licensee_login_path, status: :created, location: @licensee }
       else

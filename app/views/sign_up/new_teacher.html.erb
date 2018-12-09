@@ -26,10 +26,10 @@
     <%= form.label :password %>
     <%= form.text_field :password %>
   </div>
-  
+    
   <div class="field">
-    <%= form.label :classroom_id %>
-    <%= form.select :classroom_id, Classroom.order(:name).map { |classroom| [classroom.name, classroom.id] }, include_blank: "Select the branch: " %>
+    <%= form.label :branch_id %>
+    <%= form.select :branch_id, Branch.order(:name).map { |branch| [branch.name, branch.id] }, include_blank: "Select the branch: " %>
   </div>
 
   <div class="actions">
