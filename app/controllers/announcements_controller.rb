@@ -11,6 +11,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1
   # GET /announcements/1.json
   def show
+    @homepages = Homepage.where(announcement_id: @announcement.id )
   end
 
   # GET /announcements/new
