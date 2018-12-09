@@ -1,8 +1,8 @@
 class LoginController < ApplicationController
-  def new
+  def login
   end
-  
-  def create
+
+  def create_father_session
     father = Father.find_by(email: params[:email], password: params[:password])
     
     if father.present?
@@ -11,14 +11,14 @@ class LoginController < ApplicationController
       redirect_to homepages_index_path
     else
       flash[:alert] = "Email or password is incorrect"
-      redirect_to action: :new
+      redirect_to action: :login
     end
   end
   
-  def destroy
+  def destroy_father_session
     session[:father_id] = nil
     flash[:notice] = "Parent You are signed out successfully"
-    redirect_to action: :new
+    redirect_to action: :login
   end
   
   #Admin
