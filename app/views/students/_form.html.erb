@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form_input"  %>
   </div>
 
   <div class="field">
     <%= form.label :ic %>
-    <%= form.text_field :ic %>
+    <%= form.text_field :ic, class: "form_input"  %>
   </div>
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.text_field :gender, class: "form_input"  %>
   </div>
 
   <div class="field">
     <%= form.label :nationality %>
-    <%= form.text_field :nationality %>
+    <%= form.text_field :nationality, class: "form_input"  %>
   </div>
 
   <div class="field">
@@ -38,22 +38,22 @@
 
   <div class="field">
     <%= form.label :enrollment_date %>
-    <%= form.text_field :enrollment_date %>
+    <%= form.date_field :enrollment_date %>
   </div>
 
   <div class="field">
     <%= form.label :status_enrollment %>
-    <%= form.text_field :status_enrollment %>
+    <%= form.select :status_enrollment, "<option>Select the status: </option><option>Active</option><option>Graduated</option><option>Transfered School</option>".html_safe %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_area :address %>
+    <%= form.text_area :address, class: "form_text_input"  %>
   </div>
 
   <div class="field">
     <%= form.label :classroom_id %>
-    <%= form.select :classroom_id, Classroom.order(:name).map { |classroom| [classroom.name, classroom.id] }, include_blank: "Select the branch: " %>
+    <%= form.select :classroom_id, Classroom.order(:name).map { |classroom| [classroom.name, classroom.id] }, include_blank: "Select the classroom: " %>
   </div>
   
    <div class="field">

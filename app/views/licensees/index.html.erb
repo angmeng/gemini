@@ -2,18 +2,18 @@
 
 <h1>Licensees</h1>
 
-<table>
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Ic</th>
-      <th>Gender</th>
-      <th>Nationality</th>
-      <th>Experiences</th>
+      <!--<th>Ic</th>-->
+      <!--<th>Gender</th>-->
+      <!--<th>Nationality</th>-->
+      <!--<th>Experiences</th>-->
       <th>Contact</th>
       <th>Address</th>
       <th>Email</th>
-      <th>Password</th>
+      <!--<th>Password</th>-->
       <th>Branch</th>
       <th colspan="3"></th>
     </tr>
@@ -23,14 +23,14 @@
     <% @licensees.each do |licensee| %>
       <tr>
         <td><%= licensee.name %></td>
-        <td><%= licensee.ic %></td>
-        <td><%= licensee.gender %></td>
-        <td><%= licensee.nationality %></td>
-        <td><%= licensee.experiences %></td>
+        <!--<td><%#= licensee.ic %></td>-->
+        <!--<td><%#= licensee.gender %></td>-->
+        <!--<td><%#= licensee.nationality %></td>-->
+        <!--<td><%#= licensee.experiences %></td>-->
         <td><%= licensee.contact %></td>
         <td><%= licensee.address %></td>
         <td><%= licensee.email %></td>
-        <td><%= licensee.password %></td>
+        <!--<td><%#= licensee.password %></td>-->
         <td><%= licensee.branch.name %></td>
         <td><%= link_to 'Show', licensee %></td>
         <td><%= link_to 'Edit', edit_licensee_path(licensee) %></td>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+  
+  resources :admin_details, only: [:index] do
+    collection do
+      post 'update_admin'
+    end
+  end
+
   
   resources :class_details, only: [:index] do
     collection do
@@ -7,8 +13,6 @@ Rails.application.routes.draw do
       post 'update_student'
     end
   end
-
-=======
 
   get 'sign_up', to: "sign_up#new"
   post 'sign_up', to: "sign_up#create"
@@ -29,7 +33,6 @@ Rails.application.routes.draw do
   post 'teacher/login', to: "login#create_teacher_session"
   delete 'teacher/logout', to: "login#destroy_teacher_session"
   
->>>>>>> cda9991ab28013076aad42f39028d173934d153c
   resources :announcements
   resources :admins
   resources :mothers

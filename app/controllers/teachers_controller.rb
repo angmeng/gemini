@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  layout 'teacher'
+  layout 'admin'
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
