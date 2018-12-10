@@ -20,7 +20,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <a class="navbar-brand" href="/homepages/index" >Kindergarten</a>
+        <a class="navbar-brand" href="/homepage" >Kindergarten</a>
         
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -54,15 +54,15 @@
           <li class="nav-item active">
             <%= link_to "Student's Mother", mothers_path %>
           </li>
-        
-          <li class="nav-item active">
-            <%= link_to "Admin Profile", admins_path %>
-          </li>
           
-          <li class="nav-item active">
-            <%= link_to "Admin Login", admin_login_path %>
+          <li class="nav-item">
+            <% if current_admin.present? %>
+              <%= link_to "Admin Logout", admin_logout_path, data: {method: :delete} %>
+            <% else %>
+              <%= link_to "Admin Login", admin_login_path %>
+            <% end %>
           </li>
-          
+
          </ul>
        </nav>
     </header>
@@ -73,6 +73,7 @@
         </div>
         
         <div class="col-sm-8">
+          <h3>Current Admin: <%= display_name %></h3>
           <%= yield %>
         </div>
         

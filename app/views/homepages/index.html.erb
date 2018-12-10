@@ -11,7 +11,13 @@
 
 <hr>
 
-<h4>Session ID: <%= %></h4>
+<div>
+    <% if session[:licensee_id].present? %>
+      <%= link_to "Edit Student Detail", class_details_path %>
+    <% else %>
+      <% nil %>
+    <% end %>
+</div>
 
 <h4>Announcements</h4>
 

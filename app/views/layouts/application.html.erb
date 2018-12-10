@@ -19,26 +19,9 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm bg-primary navbar-light">
-        <a class="navbar-brand" href="#">Kindergarten</a>
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <a class="navbar-brand" href="/homepage">Kindergarten</a>
           
-          <!--<ul class="navbar-nav">-->
-          <!--  <li class="nav-item active">-->
-          <!--    <a class="nav-link" href="#">Announcements</a>-->
-          <!--  </li>-->
-        
-          <!--  <li class="nav-item active">-->
-          <!--    <a class="nav-link" href="#">Student Detail</a>-->
-          <!--  </li>-->
-        
-          <!--  <li class="nav-item active">-->
-          <!--    <a class="nav-link" href="#">My Profile</a>-->
-          <!--  </li>-->
-        
-          <!--  <li class="nav-item active">-->
-          <!--    <a class="nav-link" href="#">Login</a>-->
-          <!--  </li>-->
-          <!--</ul>-->
           <ul class="navbar-nav">
           <li class="nav-item active">
             <%= link_to "Announcements", announcements_path %>
@@ -63,19 +46,24 @@
           <li class="nav-item active">
             <%= link_to "Classrooms", classrooms_path %>
           </li>
-          
-          <li class="nav-item active">
-            <!--<a class="nav-link" href="#">Parents Detail</a>-->
-          </li>
         
           <li class="nav-item active">
-            <%= link_to "Admin Profile", admins_path %>
+            <%= link_to "Student's Father", fathers_path %>
           </li>
           
           <li class="nav-item active">
-            <%= link_to "Admin Login", admin_login_path %>
+            <%= link_to "Student's Mother", mothers_path %>
           </li>
           
+          <li class="nav-item">
+            <% if session[:licensee_id].present? %>
+              <%= link_to "Licensee Logout", licensee_logout_path, data: {method: :delete} %>
+            <% elsif session[:teacher_id].present? %>
+              <%= link_to "Teacher Logout", teacher_logout_path, data: {method: :delete} %>
+            <% elsif session[:father_id].present? %>
+              <%= link_to "Parent Logout", logout_path, data: {method: :delete} %>
+          </li>
+
          </ul>
       </nav>
     </header>
@@ -87,6 +75,8 @@
         </div>
         
         <div class="col-sm-8">
+          <h3>Current User: <%= display_name %></h3>
+          
           <%= yield %>
         </div>
         

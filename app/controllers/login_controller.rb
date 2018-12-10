@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  def login
+  def father_login
   end
 
   def create_father_session
@@ -11,14 +11,14 @@ class LoginController < ApplicationController
       redirect_to homepages_index_path
     else
       flash[:alert] = "Email or password is incorrect"
-      redirect_to action: :login
+      redirect_to action: :new
     end
   end
   
   def destroy_father_session
     session[:father_id] = nil
     flash[:notice] = "Parent You are signed out successfully"
-    redirect_to action: :login
+    redirect_to action: :new
   end
   
   #Admin

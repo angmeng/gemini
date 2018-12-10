@@ -1,4 +1,5 @@
 class ClassDetailsController < ApplicationController
+  before_action :authenticate_licensee
   
   def index
     @classrooms = Classroom.order(:name)

@@ -1,5 +1,6 @@
 class LicenseesController < ApplicationController
   layout 'admin'
+  before_action :authenticate_admin
   before_action :set_licensee, only: [:show, :edit, :update, :destroy]
 
   # GET /licensees
