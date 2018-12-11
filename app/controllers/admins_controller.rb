@@ -62,6 +62,16 @@ class AdminsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def homepages
+    @announcements = Announcement.order(:title)
+    
+    if params[:announcement_id].present?
+      @announcements = Announcement.find params[:announcement_id]
+    else
+      @announcement = Announcement.all
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,9 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Admin Main Page</h2>
+<h2>Admin Profile</h2>
 
-<div>
-    <h4>Add New Classrooms</h4>
-    <p><%= link_to "Add New Classroom", new_classroom_path %></p>
-</div>
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
 
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @admin.password %>
+</p>
+
+<%= link_to 'Edit Profile', edit_profile_admin_details_path %>

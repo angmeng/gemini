@@ -1,4 +1,6 @@
 class BranchesController < ApplicationController
+  layout 'admin'
+  before_action :authenticate_admin
   before_action :set_branch, only: [:show, :edit, :update, :destroy]
 
   # GET /branches

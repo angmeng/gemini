@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gemini Admin</title>
+    <title>Gemini</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,18 +24,18 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li class="nav-item active">
-            Current Admin: <%= display_name %>
+            Current Licensee: <%= display_name %>
           </li>
           
           <li class="nav-item active">
-            <%= link_to "Admin Profile", admin_details_path %>
+            <%= link_to "Licensee Profile", "#" %>
           </li>
           
           <li class="nav-item">
-            <% if current_admin.present? %>
-              <%= link_to "Admin Logout", admin_logout_path, data: {method: :delete} %>
+            <% if current_licensee.present? %>
+              <%= link_to "Licensee Logout", licensee_logout_path, data: {method: :delete} %>
             <% else %>
-              <%= link_to "Admin Login", admin_login_path %>
+              <%= link_to "Licensee Login", licensee_login_path %>
             <% end %>
           </li>
 
@@ -49,71 +49,65 @@
           <nav id="sidebar">
 
         <ul class="list-unstyled components">
-            <li>
+            <li class="active">
                 <a href="#">About</a>
             </li>
             
             <li>
               <a href="#announcementSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Announcements</a>
               <ul class="collapse list-unstyled" id="announcementSubmenu">
-                <li><%= link_to "All Announcements", announcements_path %></li>
-                <li><%= link_to "Add New Announcement", new_announcement_path %></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="#branchSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Branches</a>
-              <ul class="collapse list-unstyled" id="branchSubmenu">
-                <li><%= link_to "All Branches", branches_path %></li>
-                <li><%= link_to "Add New Branch", new_branch_path %></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="#licenseeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Licensees</a>
-              <ul class="collapse list-unstyled" id="licenseeSubmenu">
-                <li><%= link_to "All Licensees", licensees_path %></li>
-                <li><%= link_to "Add New Licensee", new_licensee_path %></li>
+                <li><%= link_to "Announcement", homepages_path %></li>
               </ul>
             </li>
             
             <li>
               <a href="#teacherSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Teachers</a>
               <ul class="collapse list-unstyled" id="teacherSubmenu">
-                <li><%= link_to "All Teachers", teachers_path %></li>
-                <li><%= link_to "Add New Teacher", new_teacher_path %></li>
+                <li><%= link_to "My Branch's Teachers", "#" %></li>
+                <li><%= link_to "Add New Teacher", "#" %></li>
               </ul>
             </li>
             
             <li>
               <a href="#classroomSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Classrooms</a>
               <ul class="collapse list-unstyled" id="classroomSubmenu">
-                <li><%= link_to "All Classrooms", classrooms_path %></li>
-                <li><%= link_to "Add New Classroom", new_classroom_path %></li>
+                <li><%= link_to "My Branch's Classrooms", "#" %></li>
+                <li><%= link_to "Add New Classroom", "#" %></li>
               </ul>
             </li>
             
             <li>
               <a href="#studentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Students</a>
               <ul class="collapse list-unstyled" id="studentSubmenu">
-                <li><%= link_to "All Students", students_path %></li>
-                <li><%= link_to "Add New Student", new_student_path %></li>
+                <li><%= link_to "My Branch's Students", "#" %></li>
+                <li><%= link_to "Add New Student", "#" %></li>
               </ul>
             </li>
             
             <li>
               <a href="#parentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Parents</a>
               <ul class="collapse list-unstyled" id="parentsSubmenu">
-                <li><%= link_to "Students' Father", fathers_path %></li>
-                <li><%= link_to "Students' Mother", mothers_path %></li>
-                <li><%= link_to "Add New Students Father", new_father_path %></li>
-                <li><%= link_to "Add New Students Mother", new_mother_path %></li>
+                <li><%= link_to "Students' Father", "#" %></li>
+                <li><%= link_to "Students' Mother", "#" %></li>
+                <li><%= link_to "Add New Students Father", "#" %></li>
+                <li><%= link_to "Add New Students Mother", "#" %></li>
               </ul>
+            </li>
+            
+            <li class="nav-item">
+              <% if current_licensee.present? %>
+                <%= link_to "Licensee Logout", licensee_logout_path, data: {method: :delete} %>
+              <% else %>
+                <%= link_to "Licensee Login", licensee_login_path %>
+              <% end %>
             </li>
           </nav>
         </div>
         
         <div class="col-sm-8">
+          <p><strong>Licensee: <% session[:licensee_id] %></strong></p>
+          <p><strong>Branch: <% session[:branch_id] %></strong></p>
+          
           <%= yield %>
         </div>
         

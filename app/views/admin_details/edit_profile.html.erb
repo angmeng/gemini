@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Admin Profile</h2>
+
+<div>
+  <%= form_with(model: @admin, url: "/admin_details/update_profile", method: :patch, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form_input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form_input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: "form_input" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Update Profile" %>
+    </div>
+  <% end %>
+</div>
+

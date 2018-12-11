@@ -1,19 +1,19 @@
-<h1>Parent Log in</h1>
-<%= form_tag "/login" do |form|%>
+<div class="login_div">
+  <%= form_tag "/login" do %>
+    <h2 style="text-align: center">User Login</h2>
+      <%= text_field_tag "email", '', placeholder: 'Email address', class: "form_input" %>
+      <%= password_field_tag "password", '', placeholder: 'Password', class: "form_input" %>
+    <br>
+    
+    <%= submit_tag "Login", class: "login_btn" %>
+    <br>
 
-  <label> Email </label>
-  <%= text_field_tag "email" %>
-  <br>
+  <% end %>
   
-  <label> Password </label>
-  <%= password_field_tag "password" %>
-  
-  <br>
+  <div style="text-align: center">
+    <div>Are you admin? <%= link_to "Sign in as admin!", admin_login_path %></div>
+    <div>Are you licensee? <%= link_to "Sign in as licensee!", licensee_login_path %></div>
+    <div>Are you teacher? <%= link_to "Sign in as teacher!", teacher_login_path %></div>
+  </div>
 
-  <%= submit_tag "Login" %>
-  
-<% end %>
-
- <div>Are you admin? <%= link_to "Sign in as admin!", admin_login_path  %></div>
- <div>Are you licensee? <%= link_to "Sign in as licensee!",  licensee_login_path  %></div>
- <div>Are you teacher? <%= link_to "Sign in as teacher!",   teacher_login_path  %></div>
+</div>

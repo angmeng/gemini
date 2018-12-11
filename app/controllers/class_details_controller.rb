@@ -1,4 +1,5 @@
 class ClassDetailsController < ApplicationController
+  layout 'licensee'
   before_action :authenticate_licensee
   
   def index

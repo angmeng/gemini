@@ -24,22 +24,22 @@
           
           <ul class="navbar-nav">
             <li class="nav-item active">
-              Current User: <%= display_name %>
+              Current Teacher: <%= display_name %>
             </li>
           
             <li class="nav-item active">
-              <% if session[:father_id].present? %>
-                <%= link_to "User Profile", father_path %>
+              <% if session[:teacher_id].present? %>
+                <%= link_to "Teacher Profile", "#" %>
               <% else %>
                 <% nil %>
               <% end %>
             </li>
           
             <li class="nav-item">
-              <% if current_admin.present? %>
-                <%= link_to "User Logout", logout_path, data: {method: :delete} %>
+              <% if current_teacher.present? %>
+                <%= link_to "Teacher Logout", teacher_logout_path, data: {method: :delete} %>
               <% else %>
-                <%= link_to "User Login", login_path %>
+                <%= link_to "Teacher Login", teacher_login_path %>
               <% end %>
             </li>
          </ul>
@@ -66,41 +66,42 @@
             <li>
               <a href="#classroomSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Student's Exam Result</a>
               <ul class="collapse list-unstyled" id="classroomSubmenu">
-                <li><%= link_to "Exam Result", "#" %></li>
+                <li><%= link_to "My Teaching Classrooms", "#" %></li>
               </ul>
             </li>
             
             <li>
               <a href="#studentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Student Profile</a>
               <ul class="collapse list-unstyled" id="studentSubmenu">
-                <li><%= link_to "My Students", "#" %></li>
+                <li><%= link_to "My Teaching Students", "#" %></li>
               </ul>
             </li>
             
             <li>
-              <a href="#parentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Parents Profile</a>
+              <a href="#parentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Parents</a>
               <ul class="collapse list-unstyled" id="parentsSubmenu">
-                <li><%= link_to "Father Profile", "#" %></li>
-                <li><%= link_to "Mother Profile", "#" %></li>
+                <li><%= link_to "Students Father Profile", "#" %></li>
+                <li><%= link_to "Students Mother Profile", "#" %></li>
               </ul>
             </li>
             
             <li>
               <% if current_licensee.present? %>
-                <%= link_to "User Logout", logout_path, data: {method: :delete} %>
+                <%= link_to "Teacher Logout", teacher_logout_path, data: {method: :delete} %>
               <% else %>
-                <%= link_to "User Login", login_path %>
+                <%= link_to "Teacher Login", teacher_login_path %>
               <% end %>
             </li>
           </nav>
         </div>
       
         <div class="col-sm-8">
-          <p><strong>Parent: <% session[:parent_id] %></strong></p>
+          <p><strong>Teacher: <% session[:teacher_id] %></strong></p>
           <p><strong>Licensee: <% session[:licensee_id] %></strong></p>
           <p><strong>Student: <% session[:student_id] %></strong></p>
           <p><strong>Classroom: <% session[:classroom_id] %></strong></p>
           <p><strong>Branch: <% session[:branch_id] %></strong></p>
+          <p><strong>Parent: <% session[:father_id] %></strong></p>
 
           <%= yield %>
         </div>

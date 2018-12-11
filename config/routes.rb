@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-  get 'homepage', to: 'homepages#index'
+  #get 'admin/homepages', to: "admin_homepages#index"
+  
+  get 'homepages', to: "homepages#index"
   
   resources :admin_details, only: [:index] do
     collection do
-      post 'update_admin'
+      get 'edit_profile'
+      patch 'update_profile'
     end
   end
 
@@ -41,7 +44,11 @@ Rails.application.routes.draw do
   delete 'teacher/logout', to: "login#destroy_teacher_session"
   
   resources :announcements
-  resources :admins
+  resources :admins do
+    collection do
+      get 'homepages'
+    end
+  end
   resources :mothers
   resources :fathers
   resources :licensees
