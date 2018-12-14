@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  #get 'admin/homepages', to: "admin_homepages#index"
-  
   get 'homepages', to: "homepages#index"
   
   resources :admin_details, only: [:index] do
